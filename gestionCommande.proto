@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package gestionCommande;
+
+message Produit {
+  string id = 1;
+  string nom = 2;
+  float prix = 3;
+}
+
+message Commande {
+  string id = 1;
+  string client_id = 2;
+  repeated Produit produits = 3;
+}
+
+message GetCommandeRequest {
+  string commande_id = 1;
+}
+
+message GetCommandeResponse {
+  Commande commande = 1;
+}
+
+message GetCommandesRequest {
+  /*string client_id = 1;*/
+}
+
+message GetCommandesResponse {
+  repeated Commande commandes = 1;
+}
+
+service GestionCommandeService {
+  rpc GetCommande(GetCommandeRequest) returns (GetCommandeResponse);
+  rpc GetCommandes(GetCommandesRequest) returns (GetCommandesResponse);
+}
