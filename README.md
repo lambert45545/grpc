@@ -1,3 +1,3 @@
 # streaming_microservices
- Microservices with gRPC, GraphQL and REST
+ Microservices with gRPC,  and REST
  
